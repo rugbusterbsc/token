@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RugBuster - No Rug Survives Justice</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #0d0d0d;
+      font-family: 'Arial Black', Gadget, sans-serif;
+      color: #fff;
+      text-align: center;
+      background-image: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+    }
+    .hero {
+      padding: 60px 20px;
+    }
+    .hero img {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 3em;
+      color: #00ffee;
+      text-shadow: 2px 2px #ff0040;
+    }
+    h2 {
+      color: #ffaa00;
+      margin-top: 0;
+      font-size: 1.5em;
+    }
+    .tagline {
+      font-style: italic;
+      color: #ccc;
+      margin-top: 10px;
+    }
+    .countdown {
+      font-size: 2em;
+      color: #ff0040;
+      margin-top: 40px;
+    }
+    .social {
+      margin-top: 50px;
+    }
+    .social a {
+      color: #00ffee;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 60px;
+      font-size: 0.8em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <img src="logo.png" alt="RugBuster Logo">
+    <h1>RUGBUSTER</h1>
+    <h2>No Rug Survives Justice</h2>
+    <p class="tagline">The meme coin with a mission.</p>
+    <div class="countdown" id="countdown">Launching soon...</div>
+    <div class="social">
+      <a href="https://x.com/RugBusterBSC" target="_blank">Follow on X</a>
+      
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 RugBuster. Designed to expose every rug.
+  </footer>
+
+  <script>
+    const launchDate = new Date("2025-06-10T14:00:00+02:00").getTime();
+    const countdownEl = document.getElementById("countdown");
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+
+      if (distance < 0) {
+        countdownEl.innerHTML = "Token is LIVE!";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdownEl.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+    };
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
